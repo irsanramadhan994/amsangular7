@@ -1,0 +1,60 @@
+<div class="flex-container">
+
+  <div class="content1">
+    <div class="div1">
+      <img src="assets/userprofile.png" class="userprofile">
+    </div>
+    <div class="div2">
+
+        <span>Arek Cantona</span>
+        <span> 720461</span>
+        <span>Direktur Utama</span>
+
+    </div>
+
+  </div>
+  <div class="content2">
+    <div class="div1">
+      
+        <mat-list>
+            <h3 mat-subheader >Surat Masuk</h3>
+            <mat-list-item *ngFor="let folder of Suratmasuk">
+              <mat-icon  mat-list-icon>folder</mat-icon>
+              <span matBadge="4" matBadgeOverlap="false">{{ folder.name }}</span>
+             
+
+            </mat-list-item>
+          </mat-list>
+          <mat-divider></mat-divider>
+          <mat-list>
+              <h3 mat-subheader >Surat Keluar</h3>
+              <mat-list-item *ngFor="let folder of Suratkeluar">
+                <mat-icon mat-list-icon>folder</mat-icon>
+                <span  matBadge="5" matBadgeOverlap="false">{{folder.name}}</span>
+              </mat-list-item>
+            </mat-list>
+            <mat-divider></mat-divider>
+                      <mat-list>
+              <h3 mat-subheader>Surat Keluar Antar Unit</h3>
+              <mat-list-item *ngFor="let folder of Suratkeluarantarunit">
+                <mat-icon mat-list-icon>folder</mat-icon>
+                <span  matBadge="4" matBadgeOverlap="false">{{folder.name}}</span>
+              </mat-list-item>
+            </mat-list>
+            <mat-divider></mat-divider>
+            <mat-list>
+            <h3 mat-subheader>Nota Dinas</h3>
+            <mat-list-item *ngFor="let folder of Notadinas">
+              <mat-icon mat-list-icon>folder</mat-icon>
+              <span  matBadge="4" matBadgeOverlap="false">{{folder.name}}</span>
+            </mat-list-item>
+          </mat-list>
+          <mat-divider></mat-divider>
+            
+    </div>
+
+
+  </div>
+
+
+</div>

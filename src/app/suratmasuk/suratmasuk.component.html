@@ -1,0 +1,173 @@
+<div class="flex-container">
+	
+	<div class="tittle-field">
+		
+        <p> SURAT MASUK - INBOX </p>
+		
+	</div>
+	<div class="toolbar-field">
+		
+        <p> Area: </p>
+        <select style="margin-right:10px;">
+			<option value="volvo">Belum selesai</option>
+		</select>
+		
+		<mat-form-field>
+			<input matInput [matDatepicker]="picker" placeholder="Choose a date">
+			<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+			<mat-datepicker #picker></mat-datepicker>
+		</mat-form-field>
+		<P> - </P>
+		
+		<mat-form-field class="date2"> 
+			<input matInput [matDatepicker]="picker2" placeholder="Choose a date">
+			<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+			<mat-datepicker #picker2></mat-datepicker>
+		</mat-form-field>
+		<mat-checkbox></mat-checkbox>
+        <input  (keyup)="applyFilter($event.target.value)" placeholder="Search..." class="table-search">
+        <button mat-raised-button color="primary" style="font-size:8px;">Go</button>
+        <mat-paginator [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        class="mat-paginator">
+		</mat-paginator>
+        <img src="assets/excelicon.png" class="excelicon">
+        <mat-icon style="float:right;margin-top:25px;margin-right: 10px;">print</mat-icon>
+        
+		
+		
+	</div>
+	<div class="table-field">
+		
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+			
+			<!--- Note that these columns can be defined in any order.
+			The actual rendered columns are set as a property on the row definition" -->
+			
+			<!-- Position Column -->
+			<ng-container matColumnDef="position">
+				<th mat-header-cell *matHeaderCellDef> No Surat. </th>
+				<td mat-cell *matCellDef="let element"> {{element.position}} </td>
+			</ng-container>
+			
+			<!-- Name Column -->
+			<ng-container matColumnDef="name">
+				<th mat-header-cell *matHeaderCellDef> Dari </th>
+				<td mat-cell *matCellDef="let element"> {{element.name}} </td>
+			</ng-container>
+			
+			<!-- Weight Column -->
+			<ng-container matColumnDef="weight">
+				<th mat-header-cell *matHeaderCellDef> Kepada </th>
+				<td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+			</ng-container>
+			
+			<!-- Symbol Column -->
+			<ng-container matColumnDef="symbol">
+				<th mat-header-cell *matHeaderCellDef> Perihal </th>
+				<td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+			</ng-container>
+			
+			<ng-container matColumnDef="tglterima">
+				<th mat-header-cell *matHeaderCellDef> Tgl Terima </th>
+				<td mat-cell *matCellDef="let element"> {{element.tglterima}} </td>
+			</ng-container>
+			
+            <ng-container matColumnDef="tglkeluar">
+                <th mat-header-cell *matHeaderCellDef> Tgl Keluar </th>
+                <td mat-cell *matCellDef="let element"> {{element.tglkeluar}} </td>
+			</ng-container>
+            
+			
+			
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+        
+        
+		
+	</div>
+	<div class="details-field">
+        <div class="div-tittle">
+			<p style="display:inline">Surat Masuk - Detail</p>
+			<mat-icon style="float:right;">print</mat-icon>
+			
+		</div>
+        <mat-divider></mat-divider>
+        <div class="div-content">
+			<div class="data-surat">
+				<div class="datasurat-tittle">
+					
+					<p>Data Surat</p>
+				</div>
+				<div class="datasurat-content">
+                    <div><p class="labels"> No Agenda     :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> No Surat    :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Tgl Terima     :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Tgl Surat     :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Dari     :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Kepada     :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Lampiran    :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Permasalahan    :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Sifat    :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Jenis Surat    :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Keterangan    :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Dientry Oleh    :</p><p class="labels"> TEST </p></div>
+					<ol>
+						
+						<li>
+							<button mat-raised-button (click)="openDialog()">Pick one</button>
+						</li>
+						<li *ngIf="animal">
+							You chose: <i>{{animal}}</i>
+						</li>
+					</ol>
+					
+					
+					
+				</ol>
+				
+				
+				
+			</div>
+			
+			
+		</div>
+		
+		
+		<div class="log-disposisi">
+			
+			<div class="logdisposisi-tittle">
+				
+				<p>Log Disposisi</p>
+			</div>
+            <div class="logdisposisi-content">
+				
+				<div class="per-content"> 
+					<div class="divimage">
+						
+						<img src="assets/userprofile.png" class="userdisposisi">
+					</div>
+					<div class="divnote">
+						
+						
+						<div><p class="labels"> Disposisi tanggal     :</p><p class="labels"> TEST </p></div>
+					<div> <p class="labels"> Dari    :</p><p class="labels"> TEST </p></div>
+                    <div> <p class="labels"> Kepada      :</p><p class="labels"> TEST </p></div>
+                    <div> <p class="labels-petunjuk"> Petunjuk      :</p><p class="labels"> TEST </p></div>
+					
+					</div>
+				</div>
+				<div class="per-content"> </div>
+			</div>
+			
+			
+			</div>
+			
+		</div>
+        
+	</div>
+	
+	
+</div>
